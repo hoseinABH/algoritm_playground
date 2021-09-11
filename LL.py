@@ -74,6 +74,11 @@ class LinkedList:
             temp.value =int(value)
             return True
         return False
+    def insert(self , index , value):
+        if index < 0 or index > self.length:
+            return None
+        if index == 0 :
+            return self.prepend(value)
         
 
 
