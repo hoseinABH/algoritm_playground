@@ -63,11 +63,18 @@ class LinkedList:
         return temp
     def get(self , index):
         if index < 0 or index >= self.length:
-            return "invalid index"
+            return None
         temp=self.head
         for _ in range(index):
             temp=temp.next
-        return temp.value
+        return temp
+    def set_value(self , index , value):
+        temp = self.get(index)
+        if temp:
+            temp.value =int(value)
+            return True
+        return False
+        
 
 
 
@@ -80,8 +87,8 @@ my_link_list.append(2)
 my_link_list.append(3)
 
 
-print(my_link_list.get(4))
+my_link_list.set_value(2, 85)
 
 
 # print list
-# my_link_list.print_list()
+my_link_list.print_list()
