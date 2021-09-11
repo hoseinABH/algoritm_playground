@@ -60,18 +60,28 @@ class LinkedList:
         self.length -=1
         if self.length==0:
             self.tail=None
+        return temp
+    def get(self , index):
+        if index < 0 or index >= self.length:
+            return "invalid index"
+        temp=self.head
+        for _ in range(index):
+            temp=temp.next
+        return temp.value
 
 
 
 
 
 
-my_link_list = LinkedList(4)       
+my_link_list = LinkedList(0)       
 my_link_list.append(1)
-my_link_list.append(5)
-my_link_list.append(6)
-my_link_list.prepend(0)
-my_link_list.pop_first()
+my_link_list.append(2)
+my_link_list.append(3)
+
+
+print(my_link_list.get(4))
+
 
 # print list
-my_link_list.print_list()
+# my_link_list.print_list()
