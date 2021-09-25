@@ -79,6 +79,14 @@ class LinkedList:
             return None
         if index == 0 :
             return self.prepend(value)
+        if index == self.length:
+            return self.append(value)
+        new_node = Node(value)
+        temp = self.get(index-1)
+        new_node.next = temp.next
+        temp.next = new_node
+        self.length +=1
+        return True
         
 
 
@@ -92,7 +100,7 @@ my_link_list.append(2)
 my_link_list.append(3)
 
 
-my_link_list.set_value(2, 85)
+my_link_list.insert(8,85)
 
 
 # print list
